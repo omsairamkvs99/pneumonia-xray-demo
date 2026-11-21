@@ -20,13 +20,14 @@ evaluation results from Day 1.
 
 | Model | Accuracy | Precision | Recall | Specificity | F1 | ROC-AUC |
 |-------|---------:|----------:|-------:|------------:|---:|--------:|
-| ResNet18 | 84.0% | 80.7% | 97.7% | 61.1% | 0.884 | 0.949 |
-| DenseNet121 | 78.4% | 74.9% | 98.5% | 44.9% | 0.850 | 0.952 |
+| ResNet18 | 81.7% | 78.3% | 97.9% | 54.7% | 0.870 | 0.949 |
+| DenseNet121 | 81.7% | 78.6% | 97.2% | 56.0% | 0.869 | 0.943 |
 
-Both models recall pneumonia well, above 97%, but specificity is much weaker, 61.1% and 44.9%.
+Both models recall pneumonia well, above 97%, but specificity is much weaker, 54.7% and 56.0%.
 In other words they rarely miss a pneumonia case, and they frequently flag a normal X-ray as
-pneumonia. The ROC-AUC values are close, around 0.95 for both, so the gap is mostly a question
-of where the decision threshold sits rather than of raw separability.
+pneumonia. After retraining, the two models land on the same accuracy, 81.7%, and their ROC-AUC
+values stay close at 0.949 and 0.943, so neither one clearly sees more than the other. The
+remaining difference is mostly about where the decision threshold sits.
 
 ## Running it locally
 
